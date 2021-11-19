@@ -1,0 +1,36 @@
+body{
+    background: fixed url(jack.jpg) repeat;
+}
+.add-form{
+background: #1e2526f2;
+width:45%;
+margin: auto 25%;
+    margin-top: 10%;
+    border-radius: 40px;
+    padding: 10px;
+    text-align: center;
+     
+}
+ul{
+    list-style-type: none;
+}
+.product-li{
+    font-size: 18px;
+    color:ghostwhite;
+    margin: 0%;
+}
+.add-botton{
+    width: 50%;
+    font-size: 18px;
+}
+.product-input{
+    border:none;
+    text-align: center ;
+     margin: 20px;
+     padding: 5px;
+     border-radius: 30px;
+     width:70%;
+     height:40px;
+     background:ghostwhite ;
+     color: rgba(0, 0, 0, 1) ;
+}
