@@ -1,9 +1,9 @@
 <?php
-namespace PHPMVC\models;
+namespace PHPMVC\core;
 use PDO;
-class connect
+
+class DbConnect
 {
-    
     private $username="maro";
     private $password="123abc";
     private $dbname="books";
@@ -20,14 +20,14 @@ class connect
 
         );
     }
+
     function getconnection()
     {
         return $this->connection;
     }
 }
-$conn=new connect();
+
+$conn=new DbConnect();
 $conn=$conn->getconnection();
-
-
 
 ?>

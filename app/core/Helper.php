@@ -1,5 +1,5 @@
 <?php
-namespace PHPMVC\Lib;
+namespace PHPMVC\core;
 
 class Helper
 {
