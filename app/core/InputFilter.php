@@ -1,5 +1,5 @@
 <?php
-namespace PHPMVC\Lib;
+namespace PHPMVC\core;
 
 class InputFilter
 {
@@ -7,7 +7,6 @@ class InputFilter
     {
         return filter_var($input ,FILTER_SANITIZE_NUMBET_INT);
     }
-
 
     public function filterstring($input)
     {

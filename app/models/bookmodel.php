@@ -1,14 +1,12 @@
 <?php
-
 namespace PHPMVC\models;
-use PHPMVC\models\connect;
+use PHPMVC\core\DbConnect;
 
-class Bookmodel 
+class BookModel 
 {
-    function add($table,$data )
+    function add($table,$data)
     {
-         $conn=new connect();
-
+         $conn=new DbConnect();
          $connection=$conn->getconnection();
 
          $sql = "INSERT INTO $table (name, price, category ,pages_num ,writer) VALUES (?,?,?,?,?)";
@@ -19,11 +17,9 @@ class Bookmodel
 
     }
 
-
     function select($col,$table,$con)
     {
-
-        $conn=new connect();
+        $conn=new DbConnect();
         $connection=$conn->getconnection();
 
         $data=$connection->query("select $col from $table where $con");
@@ -31,11 +27,9 @@ class Bookmodel
 
     }
 
-
     function delete($table,$id)
     {
-
-        $conn=new connect();
+        $conn=new DbConnect();
         $connection=$conn->getconnection();
 
         $sql = "DELETE FROM $table WHERE id=?";
@@ -44,8 +38,27 @@ class Bookmodel
 
     }
 
-    function edit()
+    function edit($col,$table,$id)
     {
+        $conn=new DbConnect();
+        $connection=$conn->getconnection();
+
+        $stmt = $connection->prepare("SELECT $col FROM $table WHERE id=?");
+        $stmt->execute([$id]); 
+        return $stmt;
+
+    }
+
+    function update($table,$edited_data,$id)
+    {
+        $conn=new DbConnect();
+        $connection=$conn->getconnection();
+
+        $sql = "UPDATE $table SET name, price, category ,pages_num ,writer VALUES (?,?,?,?,?) WHERE id=$id";
+        $stmt= $connection->prepare($sql);
+        $stmt->execute($edited_data);
+        return $stmt;
+
 
     }
 
