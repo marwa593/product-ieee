@@ -16,43 +16,43 @@
 <div class="container">
   <div class="add-form">
   
-    <form target="" method="post" action="book/update">
+    <form target="" method="post" >
 
 
     <ul>
     
 
        <li class="product-li">
-    <input type="text" placeholder="BOOK NAME" name="name" value="<?php echo  $user['name']; ?> " class="text-center product-input">
+    <input type="text" placeholder="BOOK NAME" name="name" value="<?php echo  $user['name'];?>" class="text-center product-input">
   </li>
 
 
 
   <li  class="product-li">
-  <input type="text" placeholder="BOOK CATEGORY" name="category" value="<?php echo  $user['category']; ?> " class="text-center product-input">
+  <input type="text" placeholder="BOOK CATEGORY" name="category" value="<?php echo  $user['category'];?>" class="text-center product-input">
 </li>
 
 
 <li  class="product-li">
-    <input type="number" placeholder="BOOK PAGES" name="pages_num" value="<?php echo  $user['pages_num']; ?>" class="text-center product-input">
+    <input type="number" placeholder="BOOK PAGES" name="pages_num" value="<?php echo  $user['pages_num'];?>" class="text-center product-input">
   </li>
 
 
 
   <li  class="product-li">
-    <input type="text" placeholder="BOOK AUTHOR" name="writer"  value="<?php echo  $user['writer']; ?> "class="text-center product-input">
+    <input type="text" placeholder="BOOK AUTHOR" name="writer"  value="<?php echo  $user['writer'];?>" class="text-center product-input">
   </li>
 
 
   <li  class="product-li">
-    <input type="number" placeholder="price" name="price" value="<?php echo  $user['price'] ; ?>" class="text-center product-input">
+    <input type="number" placeholder="price" name="price" value="<?php echo  $user['price'] ;?>" class="text-center product-input">
   </li>
 
 
 
 
 <li   class="product-li">
-  <input type="submit" class="btn btn-danger add-botton "  name ="sub" value="edit your data">
+  <input type="submit" class="btn btn-danger add-botton"  name ="sub" value="edit your data">
 
 </li>
 </ul>

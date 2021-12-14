@@ -54,23 +54,29 @@ class BookController extends AbstractController
     public function editAction()
     {
         $model=new BookModel();
+        $help=new helper();
+       
         
         $id=$this->_params[0];
         $stmt=$model->edit("*","book_data",$id);
         $user_data=$stmt->fetch();
         $this->_data['user']=$user_data;
+        
 
+        if(isset($_POST['sub']))
+        {
+           $edited_data=[$_POST['name'],$_POST['price'],$_POST['category'],$_POST['pages_num'],$_POST['writer'],$id];
+           $model->update("book_data",$edited_data);
+           $help->redirect('select');
+       
+          
+        }
+        else
+        {
+            echo 'marwa';
+        }
         $this->_view();
-
-        // if(isset($_POST['sub']))
-        // {
-        //     echo 'marwa';
-        //     $edited_data=[$_POST['name'],$_POST['price'],$_POST['category'],$_POST['pages_num'],$_POST['writer']];
-        
-        //     $model->update("book_data",$edited_data,$id);
-        // }
-        
-
+  
     }
 
     public function updateAction()
@@ -80,16 +86,14 @@ class BookController extends AbstractController
         $id=$this->_params[0];
         if(isset($_POST['sub']))
         {
-            //echo 'marwa';
-            $edited_data=[$_POST['name'],$_POST['price'],$_POST['category'],$_POST['pages_num'],$_POST['writer']];
+            
+            $edited_data=[$_POST['name'],$_POST['price'],$_POST['category'],$_POST['pages_num'],$_POST['writer'],$id];
         
-            $model->update("book_data",$edited_data,$id);
+            $model->update("book_data",$edited_data);
           
           
         }else{echo 'marwa';}
         $this->_view();
-
-
     }
 
 

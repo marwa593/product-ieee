@@ -49,12 +49,12 @@ class BookModel
 
     }
 
-    function update($table,$edited_data,$id)
+    function update($table,$edited_data)
     {
         $conn=new DbConnect();
         $connection=$conn->getconnection();
 
-        $sql = "UPDATE $table SET name, price, category ,pages_num ,writer VALUES (?,?,?,?,?) WHERE id=$id";
+        $sql = "UPDATE $table SET name, price, category ,pages_num ,writer VALUES (?,?,?,?,?) WHERE id=?";
         $stmt= $connection->prepare($sql);
         $stmt->execute($edited_data);
         return $stmt;
